@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		4B2E19D11E9D78A700D35F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E19D01E9D78A700D35F94 /* AppDelegate.swift */; };
-		4B2E19D31E9D78A700D35F94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E19D21E9D78A700D35F94 /* ViewController.swift */; };
 		4B2E19D61E9D78A800D35F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E19D41E9D78A800D35F94 /* Main.storyboard */; };
 		4B2E19D81E9D78A800D35F94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E19D71E9D78A800D35F94 /* Assets.xcassets */; };
 		4B2E19DB1E9D78A800D35F94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E19D91E9D78A800D35F94 /* LaunchScreen.storyboard */; };
+		4B2E19E31E9D83F400D35F94 /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E19E21E9D83F400D35F94 /* FavoritesList.swift */; };
+		4B2E19E51E9E029E00D35F94 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E19E41E9E029E00D35F94 /* RootViewController.swift */; };
+		4B2E19E71E9E114700D35F94 /* FontListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E19E61E9E114700D35F94 /* FontListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B2E19CD1E9D78A700D35F94 /* Fonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2E19D01E9D78A700D35F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B2E19D21E9D78A700D35F94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B2E19D51E9D78A800D35F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B2E19D71E9D78A800D35F94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B2E19DA1E9D78A800D35F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B2E19DC1E9D78A800D35F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B2E19E21E9D83F400D35F94 /* FavoritesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
+		4B2E19E41E9E029E00D35F94 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4B2E19E61E9E114700D35F94 /* FontListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				4B2E19D01E9D78A700D35F94 /* AppDelegate.swift */,
-				4B2E19D21E9D78A700D35F94 /* ViewController.swift */,
 				4B2E19D41E9D78A800D35F94 /* Main.storyboard */,
 				4B2E19D71E9D78A800D35F94 /* Assets.xcassets */,
 				4B2E19D91E9D78A800D35F94 /* LaunchScreen.storyboard */,
 				4B2E19DC1E9D78A800D35F94 /* Info.plist */,
+				4B2E19E21E9D83F400D35F94 /* FavoritesList.swift */,
+				4B2E19E41E9E029E00D35F94 /* RootViewController.swift */,
+				4B2E19E61E9E114700D35F94 /* FontListViewController.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B2E19D31E9D78A700D35F94 /* ViewController.swift in Sources */,
 				4B2E19D11E9D78A700D35F94 /* AppDelegate.swift in Sources */,
+				4B2E19E71E9E114700D35F94 /* FontListViewController.swift in Sources */,
+				4B2E19E31E9D83F400D35F94 /* FavoritesList.swift in Sources */,
+				4B2E19E51E9E029E00D35F94 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
