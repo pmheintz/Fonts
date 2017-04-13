@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,7 +76,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttx-Qo-bVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="133"/>
+            <point key="canvasLocation" x="748" y="133"/>
         </scene>
         <!--Font List View Controller-->
         <scene sceneID="aHl-jo-7TN">
@@ -109,6 +110,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TSV-j1-Lzp" kind="show" identifier="ShowFontSizes" id="mow-VK-Qmv"/>
+                                    <segue destination="HHF-ln-O8P" kind="show" identifier="ShowFontInfo" trigger="accessoryAction" id="ncq-BC-2ue"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -119,7 +124,134 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GjE-Dp-sK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="130"/>
+            <point key="canvasLocation" x="1545" y="133"/>
+        </scene>
+        <!--Font Sizes View Controller-->
+        <scene sceneID="poy-Hm-pD0">
+            <objects>
+                <tableViewController id="TSV-j1-Lzp" customClass="FontSizesViewController" customModule="Fonts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rLk-oY-LAc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FontNameAndSize" textLabel="Yjo-UD-IfR" detailTextLabel="Jd9-zw-hW2" style="IBUITableViewCellStyleSubtitle" id="dti-Mj-P7y">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dti-Mj-P7y" id="VIK-aP-EO7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yjo-UD-IfR">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jd9-zw-hW2">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TSV-j1-Lzp" id="WdZ-sz-e1C"/>
+                            <outlet property="delegate" destination="TSV-j1-Lzp" id="wkY-zN-Hoa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8I-jN-d4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351" y="133"/>
+        </scene>
+        <!--Font Info View Controller-->
+        <scene sceneID="GaM-KN-YNd">
+            <objects>
+                <viewController id="HHF-ln-O8P" customClass="FontInfoViewController" customModule="Fonts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CCr-AY-l1s"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ism-MU-lT9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x9E-dl-U4l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3p-1e-WfA">
+                                <rect key="frame" x="317" y="622" width="32" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="32o-Bi-72G"/>
+                                    <constraint firstAttribute="height" constant="21" id="Bt0-IW-PqO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include in Favortites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5R8-kH-OAu">
+                                <rect key="frame" x="149" y="567" width="153" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="MBP-f2-NWE"/>
+                                    <constraint firstAttribute="width" constant="153" id="oLq-tN-Xqo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLM-IE-iUe">
+                                <rect key="frame" x="310" y="562" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Suf-ft-f6A"/>
+                                    <constraint firstAttribute="width" constant="49" id="gBV-mF-Uad"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="toggleFavoriteWithSender:" destination="HHF-ln-O8P" eventType="valueChanged" id="Nng-ej-ZPe"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="XOp-zs-i45">
+                                <rect key="frame" x="14" y="617" width="290" height="31"/>
+                                <connections>
+                                    <action selector="slideFontSizeWithSlider:" destination="HHF-ln-O8P" eventType="valueChanged" id="huh-Tm-4Uv"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-Jf-Pg2">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i3p-1e-WfA" firstAttribute="leading" secondItem="XOp-zs-i45" secondAttribute="trailing" constant="15" id="4io-AN-4Gv"/>
+                            <constraint firstItem="XOp-zs-i45" firstAttribute="top" secondItem="5R8-kH-OAu" secondAttribute="bottom" constant="29" id="5pO-2o-slH"/>
+                            <constraint firstItem="5R8-kH-OAu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YZa-Jf-Pg2" secondAttribute="bottom" constant="10" id="62u-Lm-Faz"/>
+                            <constraint firstItem="RLM-IE-iUe" firstAttribute="trailing" secondItem="x9E-dl-U4l" secondAttribute="trailingMargin" id="66H-l3-6wg"/>
+                            <constraint firstItem="Ism-MU-lT9" firstAttribute="top" secondItem="XOp-zs-i45" secondAttribute="bottom" constant="20" id="Bpy-Py-4nP"/>
+                            <constraint firstItem="Ism-MU-lT9" firstAttribute="top" secondItem="i3p-1e-WfA" secondAttribute="bottom" constant="24" id="EqB-mQ-jzS"/>
+                            <constraint firstItem="i3p-1e-WfA" firstAttribute="top" secondItem="RLM-IE-iUe" secondAttribute="bottom" constant="29" id="JwZ-cl-Z7B"/>
+                            <constraint firstItem="XOp-zs-i45" firstAttribute="leading" secondItem="x9E-dl-U4l" secondAttribute="leadingMargin" id="KNb-QU-cdH"/>
+                            <constraint firstItem="YZa-Jf-Pg2" firstAttribute="leading" secondItem="x9E-dl-U4l" secondAttribute="leadingMargin" id="Uka-hH-Eyp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i3p-1e-WfA" secondAttribute="trailing" constant="10" id="YAq-4o-c36"/>
+                            <constraint firstItem="YZa-Jf-Pg2" firstAttribute="top" secondItem="CCr-AY-l1s" secondAttribute="bottom" constant="8" id="Zmu-9L-mQ0"/>
+                            <constraint firstItem="YZa-Jf-Pg2" firstAttribute="trailing" secondItem="x9E-dl-U4l" secondAttribute="trailingMargin" id="apE-1O-YZA"/>
+                            <constraint firstItem="RLM-IE-iUe" firstAttribute="leading" secondItem="5R8-kH-OAu" secondAttribute="trailing" constant="8" id="zOg-wC-xFk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteSwitch" destination="RLM-IE-iUe" id="KrV-fG-5fU"/>
+                        <outlet property="fontSampleLabel" destination="YZa-Jf-Pg2" id="i8F-7P-qjg"/>
+                        <outlet property="fontSizeLabel" destination="i3p-1e-WfA" id="Dmm-cv-IOI"/>
+                        <outlet property="fontSizeSlider" destination="XOp-zs-i45" id="GwU-LD-OKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fnw-sG-GxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="891"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oQm-pa-WFb">
