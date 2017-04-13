@@ -20,11 +20,22 @@ class FontListViewController: UITableViewController {
         let preferredTableViewFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         cellPointSize = preferredTableViewFont.pointSize
         tableView.estimatedRowHeight = cellPointSize
+        
+        // Alowing reordering of favorites list
+        if showsFavorites {
+            navigationItem.rightBarButtonItem = editButtonItem
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Method to allow editing to reorder
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        FavoritesList.sharedFavoritesList.moveItem(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        fontNames = FavoritesList.sharedFavoritesList.favorites
     }
     
     func fontForDisplay(atIndexPath indexPath: NSIndexPath) -> UIFont {
@@ -77,6 +88,29 @@ class FontListViewController: UITableViewController {
             infoVC.title = font.fontName
             infoVC.font = font
             infoVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(font.fontName)
+        }
+    }
+    
+    // MARK: Additional features
+    
+    // Only allow editing of favorites
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return showsFavorites
+    }
+    
+    // Allowing the deletion of rows from favorites
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if !showsFavorites {
+            return
+        }
+        
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            // Delete the row from the data source
+            let favorite = fontNames[indexPath.row]
+            FavoritesList.sharedFavoritesList.removeFavorite(fontName: favorite)
+            fontNames = FavoritesList.sharedFavoritesList.favorites
+            
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
         }
     }
 }
